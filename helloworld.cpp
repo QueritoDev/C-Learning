@@ -1,37 +1,29 @@
 #include <iostream>
+    
+    // Namespace = provides a solution for preventing name conflicts 
+    //             in large projects. Each enttity needs a unique name.
+    //             A namespace allows for identically named entities
+    //             as long as the namespaces are different.
+
+namespace first
+{
+    int x = 1;
+}
+
+namespace second
+{
+    int x = 2;
+}
 
 int main()
-{
-    
-    // integer
-    int age = 21;
-    int year = 2023;
-    int days = 7;
+{ 
+    // using namespace std;
+    // using std::cout;
+    using namespace first;
+    int x = 0; 
 
-    // double (number including decimal)
-    double price = 10.99;
-    double gpa = 2.5;
-    double temperature = 25.1;
-
-    // single character
-    char grade = 'a';
-    char initial = 'B';
-    char dollarSign = '$';
-
-    // boolean (true or false)
-    bool student = true;
-    bool power = true;
-    bool forSale = true;
-
-    // string (objects that represents a sequence of char)
-    std::string name = "Querito";
-    std::string day = "Saturday";
-    std::string food = "Pizza!";
-
-    std::cout << "Hello" << name << '\n';
-    std::cout << "It's" << day << '\n';
-    std::cout << "My favorite food is: " <<food << '\n';
-    
-    
+    std::cout << x;
+    std::cout << first::x;
+    std::cout << second::x;
     return 0;
 }
