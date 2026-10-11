@@ -1,29 +1,30 @@
 #include <iostream>
-    
-    // Namespace = provides a solution for preventing name conflicts 
-    //             in large projects. Each enttity needs a unique name.
-    //             A namespace allows for identically named entities
-    //             as long as the namespaces are different.
+#include <vector>
 
-namespace first
-{
-    int x = 1;
-}
+//Typedef -> typedef datatype; nickname;
+// It's recommended use "using" (works better w/ templates)
 
-namespace second
-{
-    int x = 2;
-}
+//typedef std::vector<std::pair<std::string, int>> pairlist_t;
+//typedef std::string text_t; //Defining a "nick" to string type;
+using text_t = std::string;
+using number_t = int;
 
 int main()
 { 
-    // using namespace std;
-    // using std::cout;
-    using namespace first;
-    int x = 0; 
+    // typedef = reserved keyword used to create an
+    // additional name (alias) for another
+    // data type.
+    // New identifier for an existing type
+    // Helps with readability and reduces typos
+    // Use when there is a clear benefit
+    // Replaced with 'using' (work better w/ templates)
+    
+    //pairlist_t pairlist;
+    text_t firstName = "Alyson";
+    number_t age = 18;
+    
+    std::cout << firstName << '\n';
+    std::cout << age << '\n';
 
-    std::cout << x;
-    std::cout << first::x;
-    std::cout << second::x;
     return 0;
 }
