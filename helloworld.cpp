@@ -1,30 +1,27 @@
 #include <iostream>
-#include <vector>
 
-//Typedef -> typedef datatype; nickname;
-// It's recommended use "using" (works better w/ templates)
-
-//typedef std::vector<std::pair<std::string, int>> pairlist_t;
-//typedef std::string text_t; //Defining a "nick" to string type;
-using text_t = std::string;
-using number_t = int;
+// cout << (insertion operator);
+// cin >> (extraction operator);
+// getline (std::cin, variable);
+// getline (std::cin >> std::ws, name) std::ws extracts and discards 
+//                                     leading whitespace characters.
 
 int main()
 { 
-    // typedef = reserved keyword used to create an
-    // additional name (alias) for another
-    // data type.
-    // New identifier for an existing type
-    // Helps with readability and reduces typos
-    // Use when there is a clear benefit
-    // Replaced with 'using' (work better w/ templates)
     
-    //pairlist_t pairlist;
-    text_t firstName = "Alyson";
-    number_t age = 18;
+    std::string name;
+    int age; 
     
-    std::cout << firstName << '\n';
-    std::cout << age << '\n';
+    std::cout << "What's your age? ";
+    std::cin >> age;
 
+    std::cout << "What's your full name?: ";
+    std::getline(std::cin >> std::ws, name);
+    //std::cout << "What's your name?: ";
+    //std::cin >> name;
+    
+    std::cout << "Hello " << name << '\n';
+    std::cout << "You are " << age << " years old";
+    
     return 0;
 }
